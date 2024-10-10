@@ -25,7 +25,6 @@ function drawBooks(books) {
     rowElement.appendChild(authorElement);
     rowElement.appendChild(summaryElement);
     rowElement.addEventListener("click", (clickBook) => {
-      console.log(clickBook, book);
       const titleofBook = document.createElement("p");
       const bookClicked = document.getElementById("selectedBookTitle");
       bookClicked.textContent = "";
@@ -59,11 +58,9 @@ function FilterBooks() {
       (book.author).toLowerCase().includes(keyword)
     );
   }
-  console.log(newList)
-  return newList;
+  drawBooks(newList);
 })
 }
 
 FilterBooks();
-console.log(newList)
 drawBooks(newList);
